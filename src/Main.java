@@ -9,7 +9,14 @@ public class Main {
      */
     public static int[] combine(int[] array1, int[] array2) {
 
-        return null;
+        int[] returnArray = new int[array1.length + array2.length];
+        for (int i = 0;i < array1.length;i++){
+            returnArray[i] = array1[i];
+        }
+        for (int i = 0;i < array2.length;i++){
+            returnArray[i + array1.length] = array2[i];
+        }
+        return returnArray;
 
     }
 
@@ -21,10 +28,19 @@ public class Main {
      * zip(myArray1, myArray2) → {1,2,3,4,5,6,7,8,9,10}
      */
     public static int[] zip(int[] array1, int[] array2) {
+        int e = 0;
 
-        return null;
+        int[] returnArray = new int[array1.length + array2.length];
+        for (int i = 0;i < array1.length;i++){
+            returnArray[e] = array1[i];
+            returnArray[e + 1] = array2[i];
+            e += 2;
+        }
+
+        return returnArray;
 
     }
+
 
     /**
      * Given two arrays of integers of equal length, write a method called product that multiplies each element in the first array by the element at the corresponding index in the second array.
@@ -35,7 +51,11 @@ public class Main {
      */
     public static int[] product(int[] array1, int[] array2) {
 
-        return null;
+        int [] returnArray = new int[array1.length];
+        for (int i = 0;i < array1.length;i++){
+            returnArray[i] = array1[i] * array2[i];
+        }
+        return returnArray;
 
     }
 
@@ -57,13 +77,23 @@ public class Main {
      */
     public static int[] capitalCount(String[] words) {
 
-        return null;
+        int[] count = new int[words.length];
+        for (int i = 0;i < words.length;i++){
+            count[i] = countCapitalLetters(words[i]);
+        }
+        return count;
 
     }
 
     public static int countCapitalLetters(String word) {
 
-        return 0;
+        int count = 0;
+        for (int i = 0;i < word.length();i++){
+            if ((int) word.charAt(i) >= 65 && (int) word.charAt(i) <= 90){
+                count++;
+            }
+        }
+        return count;
 
     }
 
